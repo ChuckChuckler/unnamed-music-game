@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cem2g7bgl3xnq"]
+
+[ext_resource type="Script" uid="uid://3eb7kmubj3q3" path="res://audioManager.gd" id="1_wtcfe"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_y32ns"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1148.0
+offset_bottom = 653.0
+color = Color(0.92099476, 0.9209946, 0.9209946, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_y32ns")
+autoplay = true
+bus = &"userInput"
+script = ExtResource("1_wtcfe")
