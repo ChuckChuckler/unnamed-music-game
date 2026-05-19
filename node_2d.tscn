@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cem2g7bgl3xnq"]
+[gd_scene load_steps=4 format=3 uid="uid://cem2g7bgl3xnq"]
 
 [ext_resource type="Script" uid="uid://3eb7kmubj3q3" path="res://audioManager.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://dsnggnmc5iwky" path="res://addons/note_detector/note_detector.gd" id="2_0e48y"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_y32ns"]
 
@@ -16,3 +17,10 @@ stream = SubResource("AudioStreamMicrophone_y32ns")
 autoplay = true
 bus = &"userInput"
 script = ExtResource("1_wtcfe")
+
+[node name="NoteDetector" type="Node" parent="."]
+script = ExtResource("2_0e48y")
+threshold = 10.0
+release = 20.0
+grace_period = 20.0
+metadata/_custom_type_script = "uid://dsnggnmc5iwky"
